@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    background: linear-gradient(295.84deg, #8BABFF 12.68%, #DE7AF7 81.51%);
+    padding: 40px;
+    font-family: 'Inter';
+}
+
+/* text styling */
+h1 {
+    margin: 0;
+    color: black;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 45px;
+    text-align: center;
+}
+
+p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #00A3FF;
+}
+
+.headDisplay {
+    display: flex;
+    justify-content: space-around;
+}
+
+.registerTab {
+    width: 540px;
+    height: 780px;
+    background-color: white;
+    border-radius: 22px;
+    padding: 45px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.logo {
+    width: 400px;
+    background-size: cover;
+    object-fit: contain;
+    align-self: center;
+}
+
+.submit {
+    border: none;
+    width: 165px;
+    height: 52px;
+    position: relative;
+    top: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    background: black;
+    color: white
+}
+
+.submit:hover {
+    background: rgb(58, 58, 58);
+
+}
+
+form {
+    margin: 60px 0;
+}
+
+input {
+    box-sizing: border-box;
+    width: 400px;
+    padding-left: 20px;
+    margin: 24px auto;
+
+    height: 58px;
+    border: 2px solid black;
+    font-size: 25px;
+    border-radius: 15px;
+    display: block;
+
+}
+
+.submit {
+    padding: 0;
+    top: 40px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    text-align: center;
+}
+
+.signOption {
+    position: absolute;
+    text-align: center;
+    bottom: 250px;
+    left: 0;
+    right: 0;
+}
+
+.log {
+    bottom: 25px;
+}
+
+@media only screen and (max-width: 1080px) {
+    .logo {
+        display: none;
+    }
+}
