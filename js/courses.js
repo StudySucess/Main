@@ -22,7 +22,7 @@ function displayCourses(data) {
         <h4>Academiejaar ${year}</h4>
         <p>${tutor}</p>
         `
-        courseElement.style.backgroundImage = "url(../images/example/Java-logo.png)"
+        // courseElement.style.backgroundImage = "url(../images/example/Java-logo.png)"
 
         courseContainer.appendChild(courseElement);
     }
