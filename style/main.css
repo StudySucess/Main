@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -25,9 +27,9 @@ body {
 
 .listItems {
     height: 100%;
-    /* li header text style */
-    font-family: Roboto Mono;
-    font-weight: Bold;
+    /* header list items text style */
+    font-family: 'Roboto Mono';
+    font-weight: 700;
     font-size: 16px;
 
     display: flex;
