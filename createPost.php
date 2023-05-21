@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,10 +17,10 @@
 <body>
   <header class="header headerGradient">
     <ul class="listItems">
-      <li><a href="index.html"><img src="images/SSHLogo.png" class="headerLogo"></a></li>
+      <li><a href="index.php"><img src="images/SSHLogo.png" class="headerLogo"></a></li>
       <li><a href="overview.html">Overzicht</a></li>
       <li>
-        <a href="classes.html">Vakken</a>
+        <a href="classes.php">Vakken</a>
         <a href=""><img src="images/header/dropdownSel.svg"></a>
       </li>
       <li><a href="experiences.html">Ervaringen</a></li>

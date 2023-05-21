@@ -1,9 +1,12 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <link href="./style/main.css" rel="stylesheet" />
-    <link href="./style/courses.css" rel="stylesheet" />
     <title>Document</title>
 </head>
 
@@ -13,7 +16,7 @@
             <li><a href="index.html"><img src="images/SSHLogo.png" class="headerLogo"></a></li>
             <li><a href="overview.html">Overzicht</a></li>
             <li>
-                <a href="classes.html">Vakken</a>
+                <a href="classes.php">Vakken</a>
                 <a href=""><img src="images/header/dropdownSel.svg"></a>
             </li>
             <li><a href="experiences.html">Ervaringen</a></li>
@@ -28,20 +31,8 @@
             </li>
         </ul>
     </header>
-    <main>
-        <h1>Je cursussen</h1>
-        <div class="courseContainer">
-            <!-- <div> voorbeeld:
-                <h3>IT-Essentials</h3>
-                <h4>Academiejaar 2022-2023</h4>
-                <p>Geert Coulummier</p>
-            </div> -->
-        </div>
-    </main>
 
-
-    <script src="js/courses.js"></script>
-
+    <div class="bgCover"></div>
 </body>
 
 </html>
