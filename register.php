@@ -7,7 +7,7 @@ $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] = "POST"){
+if($_SERVER["REQUEST_METHOD"] === "POST"){
 
     // Validate username
     if(empty(trim($_POST["username"]))){
@@ -116,7 +116,7 @@ if($_SERVER["REQUEST_METHOD"] = "POST"){
                 <input type="text" id="username" name="username" placeholder="Username">
                 <input type="email" id="email" name="email" placeholder="Email">
                 <input type="password" id="password" name="password" placeholder="Password">
-                <input type="password" id="confirm_password" name="passConfirm" placeholder="Confirm Password">
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
 
                 <input type="submit" value="Sign up" class="submit">
             </form>

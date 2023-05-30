@@ -31,6 +31,7 @@ a {
 .headDisplay {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .registerTab {
@@ -47,7 +48,6 @@ a {
     width: 400px;
     background-size: cover;
     object-fit: contain;
-    align-self: center;
 }
 
 .submit {
