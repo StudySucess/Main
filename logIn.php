@@ -101,7 +101,7 @@ if($_SERVER["REQUEST_METHOD"] = "POST"){
 
 <body>
     <div class="headDisplay">
-        <img class="logo" src="images/logoHD.png">
+        <a href="index.php"><img class="logo" src="images/logoHD.png"></a>
         <div class="registerTab">
             <h1>Sign in</h1>
             <form method="post">
