@@ -8,7 +8,7 @@ session_start();
 <head>
     <link href="./style/main.css" rel="stylesheet" />
     <link href="./style/courses.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Vakken</title>
 </head>
 
 <body>

@@ -7,7 +7,7 @@ session_start();
 
 <head>
     <link href="./style/main.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Home page</title>
 </head>
 
 <body>
