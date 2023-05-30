@@ -19,16 +19,16 @@ $username_err = $password_err = $login_err = "";
 if($_SERVER["REQUEST_METHOD"] === "POST"){
 
     // Check if username is empty
-    if(empty(trim($_POST["username"]))){
+    if (empty(trim($_POST["username"]))) {
         $username_err = "Please enter username.";
-    } else{
+    } else {
         $username = trim($_POST["username"]);
     }
 
     // Check if password is empty
-    if(empty(trim($_POST["password"]))){
+    if (empty(trim($_POST["password"]))) {
         $password_err = "Please enter your password.";
-    } else{
+    } else {
         $password = trim($_POST["password"]);
     }
 
@@ -104,10 +104,13 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         <a href="index.php"><img class="logo" src="images/logoHD.png"></a>
         <div class="registerTab">
             <h1>Sign in</h1>
-            <form method="post">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <input type="text" id="nameInput" name="username" placeholder="Name">
+                <span class="error"><?php echo $username_err; ?></span>
                 <input type="password" id="passInput" name="password" placeholder="Password">
-
+                <span class="error"><?php echo $password_err; ?></span>
+                <span class="error"><?php echo $login_err; ?></span>
+                
                 <input type="submit" value="Sign in" class="submit">
             </form>
             <p class="signOption">New to StudySuccesHub? <a id="link" href="register.php">Sign up</a></p>
