@@ -27,7 +27,7 @@ session_start();
             </li>
             <li><a href="about.html">Over ons</a></li>
             <li>
-                <button onclick="window.location.href='logIn.html';" class="logInBtn">Log in</button>
+                <button onclick="window.location.href='logIn.php';" class="logInBtn">Log in</button>
             </li>
         </ul>
     </header>
