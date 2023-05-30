@@ -112,11 +112,11 @@ if($_SERVER["REQUEST_METHOD"] = "POST"){
         <div class="registerTab">
             <h1>Create a new account</h1>
             <form>
-                <input type="text" id="input_name" name="name" placeholder="Name">
-                <input type="text" id="input_username" name="username" placeholder="Username">
+                <input type="text" id="name" name="name" placeholder="Name">
+                <input type="text" id="username" name="username" placeholder="Username">
                 <input type="email" id="email" name="email" placeholder="Email">
                 <input type="password" id="password" name="password" placeholder="Password">
-                <input type="password" id="input_pass_confirm" name="passConfirm" placeholder="Confirm Password">
+                <input type="password" id="confirm_password" name="passConfirm" placeholder="Confirm Password">
 
                 <input type="submit" value="Sign up" class="submit">
             </form>
