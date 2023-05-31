@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $fname_err = "The full name should be at least 6 characters."; 
     } else {
         $fname = trim($_POST["fname"]);
+        $fname = ucwords(strtolower($fname));
         
         // Check if full name already exists
         $sql = "SELECT id FROM users WHERE full_name = ?";
@@ -124,6 +125,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $password_err = "Please enter a password.";
     } elseif (strlen(trim($_POST["password"])) < 6) {
         $password_err = "Password must have at least 6 characters.";
+    } elseif (!preg_match('/[!@#$%^&*]/', $_POST["password"])) {
+        $password_err = "Password must contain at least one symbol (!, @, #, $, %, ^, &, *).";
     } else {
         $password = trim($_POST["password"]);
     }
