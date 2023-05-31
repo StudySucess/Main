@@ -152,17 +152,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="email" id="emailInput" name="email" placeholder="Email" value="<?php echo $email; ?>">
                 <span class="error"><?php echo $email_err; ?></span>
                 
-                <!-- if the user an studen or teacher -->
-                <select name="role" id="role">
-                    <option value="student">Student</option>
-                    <option value="teacher">Teacher</option>
-                </select>
-                
                 <input type="password" id="passInput" name="password" placeholder="Password">
                 <span class="error"><?php echo $password_err; ?></span>
                 
                 <input type="password" id="passInput" name="confirm_password" placeholder="Confirm Password">
                 <span class="error"><?php echo $confirm_password_err; ?></span>
+
+                <!-- if the user an studen or teacher -->
+                <select name="role" id="roleSelect">
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+                <span class="error"><?php echo $role_err; ?></span>
                 
                 <input type="submit" value="Sign up" class="submit">
             </form>
