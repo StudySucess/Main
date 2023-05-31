@@ -16,7 +16,35 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $fname_err = "The full name should be at least 6 characters."; 
     } else {
         $fname = trim($_POST["fname"]);
+        
+        // Check if full name already exists
+        $sql = "SELECT id FROM users WHERE full_name = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_fullname);
+
+            // Set parameters
+            $param_fullname = $fname;
+
+            // Attempt to execute the prepared statement
+            if (mysqli_stmt_execute($stmt)) {
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+
+                if (mysqli_stmt_num_rows($stmt) > 0) {
+                    $fname_err = "This full name is already taken.";
+                }
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
     }
+
+
 
     // Validate username
     if (empty(trim($_POST["username"]))) {
@@ -62,7 +90,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $email_err = "Invalid email format.";
     } else {
         $email = trim($_POST["email"]);
+        
+        // Check if email already exists
+        $sql = "SELECT id FROM users WHERE email = ?";
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_email);
+
+            // Set parameters
+            $param_email = $email;
+
+            // Attempt to execute the prepared statement
+            if (mysqli_stmt_execute($stmt)) {
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+
+                if (mysqli_stmt_num_rows($stmt) == 1) {
+                    $email_err = "This email is already registered.";
+                }
+            } else {
+                echo "Oops! Something went wrong. Please try again later.";
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
     }
+
 
     // Validate password
     if (empty(trim($_POST["password"]))) {
@@ -161,7 +216,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <!-- if the user an studen or teacher -->
                 <select name="role" id="roleSelect">
                     <option value="student">Student</option>
-                    <option value="teacher">Teacher</option>
+                    <option value="docent">Teacher</option>
                 </select>
                 <span class="error"><?php echo $role_err; ?></span>
                 
