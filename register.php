@@ -145,19 +145,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <input type="text" id="fname" name="fname" placeholder="Full name" value="<?php echo $fname; ?>">
                 <span class="error"><?php echo $fname_err; ?></span>
+                
                 <input type="text" id="nameInput" name="username" placeholder="Name" value="<?php echo $username; ?>">
                 <span class="error"><?php echo $username_err; ?></span>
+                
                 <input type="email" id="emailInput" name="email" placeholder="Email" value="<?php echo $email; ?>">
                 <span class="error"><?php echo $email_err; ?></span>
+                
                 <!-- if the user an studen or teacher -->
                 <select name="role" id="role">
                     <option value="student">Student</option>
                     <option value="teacher">Teacher</option>
                 </select>
+                
                 <input type="password" id="passInput" name="password" placeholder="Password">
                 <span class="error"><?php echo $password_err; ?></span>
+                
                 <input type="password" id="passInput" name="confirm_password" placeholder="Confirm Password">
                 <span class="error"><?php echo $confirm_password_err; ?></span>
+                
                 <input type="submit" value="Sign up" class="submit">
             </form>
             <p class="signOption">Already have an account? <a id="link" href="login.php">Sign in</a></p>
