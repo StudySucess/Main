@@ -36,7 +36,7 @@ a {
 
 .registerTab {
     width: 540px;
-    height: 858px;
+    height: 870px;
     background-color: white;
     border-radius: 22px;
     padding: 45px;
@@ -68,7 +68,7 @@ a {
 }
 
 form {
-    margin: 23px 0;
+    margin: 27px 0;
 }
 
 input {
