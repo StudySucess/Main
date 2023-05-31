@@ -36,7 +36,7 @@ a {
 
 .registerTab {
     width: 540px;
-    height: 780px;
+    height: 858px;
     background-color: white;
     border-radius: 22px;
     padding: 45px;
@@ -68,7 +68,7 @@ a {
 }
 
 form {
-    margin: 47px 0;
+    margin: 23px 0;
 }
 
 input {
@@ -90,6 +90,19 @@ input {
     color: red;
 }
 
+#roleSelect  {
+    box-sizing: border-box;
+    width: 400px;
+    padding-left: 20px;
+    margin: 20px auto;
+    height: 58px;
+    border: 2px solid black;
+    font-size: 25px;
+    border-radius: 15px;
+    display: block;
+    color: rgb(123, 123, 123);
+}
+
 .submit {
     padding: 0;
     top: 9px;
@@ -102,7 +115,7 @@ input {
 .signOption {
     position: relative;
     text-align: center;
-    bottom: 17px;
+    bottom: -3px;
     left: 0;
     right: 0;
 }
