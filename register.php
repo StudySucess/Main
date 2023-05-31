@@ -3,8 +3,8 @@
 require_once "config.php";
 
 // Define variables and initialize with empty values
-$fname = $username = $email = $password = $confirm_password = "";
-$fname_err = $username_err = $email_err = $password_err = $confirm_password_err = "";
+$fname = $username = $email = $password = $confirm_password = $role = "";
+$fname_err = $username_err = $email_err = $password_err = $confirm_password_err = $role_err = "";
 
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validate full name
     if (empty(trim($_POST["fname"]))) {
         $fname_err = "Please enter your full name.";
-    } elseif (strlen($_POST["fname"]) < 3) {
-        $fname_err = "The full name should be at least 3 characters."; 
+    } elseif (strlen($_POST["fname"]) < 6) {
+        $fname_err = "The full name should be at least 6 characters."; 
     } else {
         $fname = trim($_POST["fname"]);
     }
@@ -83,21 +83,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     }
 
+    // Validate role
+    if (empty($_POST["role"])) {
+        $role_err = "Please select a role.";
+    } else {
+        $role = $_POST["role"];
+    }
+
     // Check input errors before inserting into database
-    if (empty($fname_err) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err)) {
+    if (empty($fname_err) && empty($username_err) && empty($email_err) && empty($password_err) && empty($confirm_password_err) && empty($role_err)) {
 
         // Prepare an insert statement
-        $sql = "INSERT INTO users (full_name, username, email, password) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO users (full_name, username, email, password, role) VALUES (?, ?, ?, ?, ?)";
 
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_fname, $param_username, $param_email, $param_password);
+            mysqli_stmt_bind_param($stmt, "sssss", $param_fname, $param_username, $param_email, $param_password, $param_role);
 
             // Set parameters
             $param_fname = $fname;
             $param_username = $username;
             $param_email = $email;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+            $param_role = $role;
 
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
@@ -141,6 +149,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <span class="error"><?php echo $username_err; ?></span>
                 <input type="email" id="emailInput" name="email" placeholder="Email" value="<?php echo $email; ?>">
                 <span class="error"><?php echo $email_err; ?></span>
+                <!-- if the user an studen or teacher -->
+                <select name="role" id="role">
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
                 <input type="password" id="passInput" name="password" placeholder="Password">
                 <span class="error"><?php echo $password_err; ?></span>
                 <input type="password" id="passInput" name="confirm_password" placeholder="Confirm Password">
