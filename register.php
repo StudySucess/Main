@@ -12,6 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Validate full name
     if (empty(trim($_POST["fname"]))) {
         $fname_err = "Please enter your full name.";
+    } elseif (strlen($_POST["fname"]) < 3) {
+        $fname_err = "The full name should be at least 3 characters."; 
     } else {
         $fname = trim($_POST["fname"]);
     }
@@ -21,6 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $username_err = "Please enter a username.";
     } elseif (!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))) {
         $username_err = "Username can only contain letters, numbers, and underscores.";
+    } elseif (strlen($_POST["username"]) < 3) {
+        $username_err = "The username should be at least 3 characters.";
     } else {
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE username = ?";
