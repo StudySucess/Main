@@ -30,10 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $password_err = "Please enter your password.";
     } else {
         $password = trim($_POST["password"]);
-        // Password validation
-        if (strlen($password) < 6) {
-            $password_err = "Password must have at least 6 characters.";
-        }
     }
 
     // Validate credentials
@@ -56,28 +52,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // Check if username exists, if yes then verify password
                 if (mysqli_stmt_num_rows($stmt) == 1) {
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $id, $username, $stored_password);
                     if (mysqli_stmt_fetch($stmt)) {
-                        if (password_verify($password, $hashed_password)) {
+                        // Verify the plain text password
+                        if ($password === $stored_password) {
                             // Password is correct, so start a new session
                             session_start();
 
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
+                            $_SESSION["id"] = $id;
 
                             // Redirect user to index page
                             header("location: index.php");
                         } else {
                             // Password is not valid, display a generic error message
-                            $login_err = "Invalid username or password.";
-                            header("location: index.php");
+                            $login_err = "There is something wrong with the password.";
                         }
                     }
                 } else {
                     // Username doesn't exist, display a generic error message
-                    $login_err = "Invalid username or password.";
+                    $login_err = "Username doesn't exist.";
                 }
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
@@ -109,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <a href="index.php"><img class="logo" src="images/logoHD.png"></a>
         <div class="registerTab">
             <h1>Sign in</h1>
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <input type="text" id="nameInput" name="username" placeholder="Name">
                 <span class="error"><?php echo $username_err; ?></span>
                 <input type="password" id="passInput" name="password" placeholder="Password">
