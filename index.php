@@ -6,8 +6,8 @@ session_start();
 <html>
 
 <head>
-    <link href="./style/main.css" rel="stylesheet" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Home page</title>
 </head>
 
 <body>
@@ -26,13 +26,27 @@ session_start();
                 <div class="searchSymbol"></div>
             </li>
             <li><a href="about.php">Over ons</a></li>
-            <li>
-                <button onclick="window.location.href='logIn.php';" class="logInBtn">Log in</button>
-            </li>
+            <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+                $username = $_SESSION["username"];
+                echo '<li><span class="username">' . $username . '</span></li>';
+                echo '<li><a href="logOut.php">logout</a></li>';
+            } else {
+                echo '<li><button onclick="window.location.href=\'logIn.php\';" class="logInBtn">Log in</button></li>';
+            }
+            ?>
         </ul>
     </header>
-
-    <div class="bgCover"></div>
+    <main>
+        <div class="bgCover">
+            <p>
+                <?php
+                if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+                    echo "Welcome, " . $username . "!";
+                }
+                ?>
+            </p>
+        </div>
+    </main>
 </body>
 
 </html>
