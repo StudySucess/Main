@@ -7,6 +7,7 @@ session_start();
 
 <head>
     <link rel="stylesheet" href="./style/main.css">
+    <link href="./style/index.css" rel="stylesheet" />
     <title>Home page</title>
 </head>
 
@@ -38,13 +39,19 @@ session_start();
     </header>
     <main>
         <div class="bgCover">
-            <p>
+            <h1 class="welcomeMsg">
                 <?php
                 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                     echo "Welcome, " . $username . "!";
                 }
                 ?>
-            </p>
+            </h1>
+            <div class="intro">
+                <h1>StudySuccesHub</h1>
+                <p>Het portaal voor studenten om jouw studiemateriaal, vragen en ervaringen te delen met
+                    je medestudenten!
+                </p>
+            </div>
         </div>
     </main>
 </body>
