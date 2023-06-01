@@ -34,13 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // Validate credentials
     if (empty($username_err) && empty($password_err)) {
-        // Prepare a select statement
+                
+        // Store the hashed password in the database
         $sql = "SELECT id, username, password FROM users WHERE username = ?";
-
+        
         if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
-
+            
             // Set parameters
             $param_username = $username;
 
@@ -48,22 +49,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (mysqli_stmt_execute($stmt)) {
                 // Store result
                 mysqli_stmt_store_result($stmt);
-
+                
                 // Check if username exists, if yes then verify password
                 if (mysqli_stmt_num_rows($stmt) == 1) {
+                    
                     // Bind result variables
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    
                     if (mysqli_stmt_fetch($stmt)) {
+
+                        echo "Retrieved hashed password from the database: " . $hashed_password . "<br>";
+                        
                         // Verify the hashed password
                         if (password_verify($password, $hashed_password)) {
+                            
                             // Password is correct, so start a new session
                             session_start();
-
+                            
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["username"] = $username;
                             $_SESSION["id"] = $id;
-
+                            
                             // Redirect user to index page
                             header("location: index.php");
                         } else {
