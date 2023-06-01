@@ -3,6 +3,9 @@
 
 body {
     margin: 0px;
+}
+
+.indexBody {
     height: 100vb;
     background-image: url("../images/edu.jpg");
     background-size: 1353px auto;

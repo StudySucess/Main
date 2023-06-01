@@ -10,7 +10,7 @@ session_start();
     <title>Home page</title>
 </head>
 
-<body>
+<body class="indexBody">
     <header class="header headerGradient">
         <ul class="listItems">
             <li><a href="index.php"><img src="images/SSHLogo.png" class="headerLogo"></a></li>
