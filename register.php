@@ -32,10 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (mysqli_stmt_execute($stmt)) {
                 /* store result */
                 mysqli_stmt_store_result($stmt);
-
-                if (mysqli_stmt_num_rows($stmt) > 0) {
-                    $fname_err = "This full name is already taken.";
-                }
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
