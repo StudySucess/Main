@@ -57,8 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
                     
                     if (mysqli_stmt_fetch($stmt)) {
-
-                        echo "Retrieved hashed password from the database: " . $hashed_password . "<br>";
                         
                         // Verify the hashed password
                         if (password_verify($password, $hashed_password)) {
