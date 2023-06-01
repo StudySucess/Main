@@ -167,8 +167,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
-                // Redirect to login page
-                header("location: login.php");
+                // Registration successful, set session variables and redirect to index.php
+                session_start();
+                $_SESSION["loggedin"] = true;
+                $_SESSION["username"] = $username;
+                header("location: index.php");
                 exit;
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
