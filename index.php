@@ -4,10 +4,12 @@ session_start();
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <link href="./style/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/main.css">
     <title>Home page</title>
 </head>
+
 <body>
     <header class="header headerGradient">
         <ul class="listItems">
@@ -24,29 +26,26 @@ session_start();
                 <div class="searchSymbol"></div>
             </li>
             <li><a href="about.php">Over ons</a></li>
-            <li>
-                <?php
-                if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-                    $username = $_SESSION["username"];
-                    echo '<span class="username">' . $username . '</span>'; // Display the username
-                } else {
-                    echo '<button onclick="window.location.href=\'logIn.php\';" class="logInBtn">Log in</button>'; // Display the login button
-                }
-                ?>
-            </li>
+            <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+                $username = $_SESSION["username"];
+                echo '<li><span class="username">' . $username . '</span></li>';
+                echo '<li><a href="logOut.php">logout</a></li>';
+            } else {
+                echo '<li><button onclick="window.location.href=\'logIn.php\';" class="logInBtn">Log in</button></li>';
+            } 
+            ?>
         </ul>
     </header>
 
-    <main class="bgCover">
+    <div class="bgCover">
         <p>
             <?php
-            // Check if the user is logged in
             if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-                $username = $_SESSION["username"];
-                echo "Welcome, " . $username . "!"; // Display the welcome message
+                echo "Welcome, " . $username . "!";
             }
             ?>
         </p>
-    </main>
+    </div>
 </body>
+
 </html>
