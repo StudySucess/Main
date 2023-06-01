@@ -32,20 +32,21 @@ session_start();
                 echo '<li><a href="logOut.php">logout</a></li>';
             } else {
                 echo '<li><button onclick="window.location.href=\'logIn.php\';" class="logInBtn">Log in</button></li>';
-            } 
+            }
             ?>
         </ul>
     </header>
-
-    <div class="bgCover">
-        <p>
-            <?php
-            if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-                echo "Welcome, " . $username . "!";
-            }
-            ?>
-        </p>
-    </div>
+    <main>
+        <div class="bgCover">
+            <p>
+                <?php
+                if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+                    echo "Welcome, " . $username . "!";
+                }
+                ?>
+            </p>
+        </div>
+    </main>
 </body>
 
 </html>
