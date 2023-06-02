@@ -1,6 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
-
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../icon-fonts/icomoon.eot?cmpf9f');
+    src:  url('../icon-fonts/icomoon.eot?cmpf9f#iefix') format('embedded-opentype'),
+      url('../icon-fonts/icomoon.ttf?cmpf9f') format('truetype'),
+      url('../icon-fonts/icomoon.woff?cmpf9f') format('woff'),
+      url('../icon-fonts/icomoon.svg?cmpf9f#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 body {
     margin: 0px;
 }
@@ -93,4 +118,73 @@ body {
     font-weight: Bold;
     font-size: 14px;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+    background: linear-gradient(239.74deg, #7381FF 31.58%, #6701CC 161.95%);
+    box-shadow: 0px 10px 40px 0px rgba(117, 131, 255, 1);
+    color: white;
+    padding: 12px;
+}
+
+.inner-container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 150px;
+}
+
+.footer-social ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-social li {
+    display: inline-block;
+    margin-right: 25px;
+}
+.footer-contact {
+    margin-top: 20px;
+    color: white;
+}
+.footer-contact p {
+    margin: 5px 0;
+}
+.footer-copy {
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.icon-facebook2:before {
+    content: "\ea91";
+}
+
+.icon-youtube1:before {
+    content: "\ea9d";
+}
+.icon-linkedin1:before {
+    content: "\eac9";
 }
