@@ -96,7 +96,7 @@ session_start();
         <div class="inner-container1">
             <div class="footer-links">
                 <ul>
-                    <li>Contact</li> <!-- Vervang de link door tekst -->
+				<li><a href="contact.php">Contact</a></li>
                     
                     <li><a href="about.php">Over ons</a></li>
                     <li><a href="https://login.ehb.be/login">Canvas</a></li>

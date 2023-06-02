@@ -50,7 +50,7 @@ session_start();
         <div class="inner-container1">
             <div class="footer-links">
                 <ul>
-                    <li>Contact</li> 
+                    <li><a href="contact.php">Contact</a></li>
                     <li><a href="about.php">Over ons</a></li>
                     <li><a href="https://login.ehb.be/login">Canvas</a></li>
                     <li><a href="index.php">Home</a></li>
