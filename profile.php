@@ -9,8 +9,8 @@
     </head>
     <body>
         <nav class="melding">
-            <img src="images/profile/icons8-add-to-chat-32.png">
-            <img src="images/profile/icons8-notification-32.png">
+            <img src="images/profile/add-to-chat-icon.png">
+            <img src="images/profile/notification-icon.png">
         </nav>
         <div class="navigation">
             <h1>Uw Profile</h1>
