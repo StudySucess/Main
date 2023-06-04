@@ -26,7 +26,7 @@
         </div>
         <main>
             <div class="imgProfile">
-                <img src="images/v1090_4832.png">
+                <img src="images/profile.png">
                 <h3>&nbsp; Change profile <br> &nbsp; &nbsp; &nbsp; &nbsp; picture</h3>
             </div>
             <div class="edit_profile">
