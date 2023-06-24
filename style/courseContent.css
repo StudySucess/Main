@@ -33,7 +33,7 @@
     display: inline-block;
 }
 
-.titleBg>img{
+.titleBg>img {
     height: 100%;
     user-select: none;
 }
@@ -48,7 +48,7 @@
     font-size: 50px;
     font-family: 'Shippori Antique B1';
     font-weight: 400;
-    
+
 }
 
 .canvasLink {
@@ -67,7 +67,7 @@
 }
 
 .canvasBtn {
-    height: 65px;   
+    height: 65px;
     width: 65px;
     display: inline-block;
     box-sizing: border-box;
@@ -103,6 +103,8 @@
     width: 740px;
 }
 
+
+
 .postHeader {
     background: #F1F1F1;
     border-radius: 5px 5px 0px 0px;
@@ -113,10 +115,10 @@
 .post h2 {
     margin: 0;
     display: inline-block;
-} 
+}
 
 .postHeader h3 {
-    color: #B9B9B9;  
+    color: #B9B9B9;
     font-family: 'SeoulNamsan';
     font-style: normal;
     font-weight: 400;
@@ -127,16 +129,28 @@
 
 .postBody {
     font-size: 20px;
+    max-height: 40px;
     overflow: hidden;
-    padding: 20px;
-  }
-  
+    margin: 20px;
+    transition-property: max-height;
+    transition-duration: 2s;
+    transition-delay: 0.5s;
+    width: 650px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.postBody:hover {
+    max-height: 300px;
+    overflow: auto;
+}
+
 .postFooter {
-    
+
     background: #F1F1F1;
     border-radius: 0px 0px 5px 5px;
     border-top: 1px solid #B9B9B9;
-    
+
 }
 
 .file_count_post {
@@ -161,61 +175,55 @@
 
 .icon_like {
     display: inline-block;
-	position: relative;
+    position: relative;
     right: -250px;
     top: 3px;
 }
 
 .like_count {
-	display: inline-block;
-	position: relative;
+    display: inline-block;
+    position: relative;
     right: -250px;
     top: -2px;
-	font-family: SeoulNamsan;
-	font-size: 20px;
-	color: #5D6AE1;
+    font-family: SeoulNamsan;
+    font-size: 20px;
+    color: #5D6AE1;
 }
 
 .icon_dislike {
-	display: inline-block;
-	position: relative;
+    display: inline-block;
+    position: relative;
     right: -280px;
     top: 3px;
 }
 
 .dislike_count {
-	display: inline-block;
-	position: relative;
+    display: inline-block;
+    position: relative;
     right: -280px;
     top: -2px;
-	font-family: SeoulNamsan;
-	font-size: 20px;
-	color: #5D6AE1;
+    font-family: SeoulNamsan;
+    font-size: 20px;
+    color: #5D6AE1;
 }
+
 .reply {
-	display: inline-block;
-	position: relative;
+    display: inline-block;
+    position: relative;
     right: -510px;
     top: 3px;
 }
 
 .add_favourite {
-	display: inline-block;
-	position: relative;
+    display: inline-block;
+    position: relative;
     right: -520px;
     top: 3px;
 }
 
 .upload_file {
-	display: inline-block;
-	position: relative;
+    display: inline-block;
+    position: relative;
     right: -530px;
     top: 3px;
 }
-
-
-
-
-
-
-
