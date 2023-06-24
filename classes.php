@@ -8,7 +8,7 @@ session_start();
 <head>
     <link href="./style/main.css" rel="stylesheet" />
     <link href="./style/courses.css" rel="stylesheet" />
-    <title>Document</title>
+    <title>Vakken</title>
 </head>
 
 <body>
@@ -43,7 +43,35 @@ session_start();
         </div>
     </main>
 
-
+    <footer class="footer">
+        <div class="inner-container1">
+            <div class="footer-links">
+                <ul>
+                <li><a href="contact.php">Contact</a></li>
+                    <li><a href="about.php">Over ons</a></li>
+                    <li><a href="https://login.ehb.be/login">Canvas</a></li>
+                    <li><a href="index.php">Home</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <ul>
+                    <li><a href="https://www.facebook.com/erasmushogeschool" target="_blank"><span class="icon-facebook2"></span></a></li>
+                    <li><a href="https://www.youtube.com/user/ehbrussel" target="_blank"><span class="icon-youtube1"></span></a></li>
+                    <li><a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" target="_blank"><span class="icon-linkedin1"></span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-contact">
+            <p>Bel 02 523 37 37</p>
+            <p>Mail info@ehb.be</p>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; StudySuccesHub2023</p>
+        </div>
+        <div class="collaboration">
+            <p>Collaboration with Erasmushogeschool Brussel</p>
+        </div>
+    </footer>
     <script src="js/courses.js"></script>
 
 </body>
